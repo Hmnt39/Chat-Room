@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+<html lang = "en">
+  <head> 
+      <meta charset = "utf-8" /> 
+      <title>Chat Screen</title>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='chat.css') }}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body> 
+    <div class="container">
+      <div class="chatbox">
+        <div class="top-bar">
+          <div class="name">Chat Room 1</div>
+          <div class="icons">
+            <i class="fa fa-phone"></i>
+            <i class="fa fa-camera"></i>
+          </div>
+          <div class="menu">
+            <div class="dots"></div>
+          </div>
+        </div>
+        <div class="middle">
+          <div class="incoming">
+            <div class="bubble">Hey, Father's Day is coming up..</div>
+          </div>
+        </div>
+        <div class="bottom-bar">
+            <input type="text" placeholder="Type a message..." />
+            <button type="submit"><i class="fa fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

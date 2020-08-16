@@ -1,0 +1,156 @@
+html {
+  display: grid;
+}
+
+body {
+  display: grid;
+  background: linear-gradient(to bottom left, #AAAAAA 20%, #7900FF 100%);
+}
+
+.container {
+  position: relative;
+  margin: 2% auto;
+  width: 620px;
+  height: 600px;
+}
+
+.chatbox {
+  position: absolute; 
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(#777777, 0.5);
+}
+
+.top-bar {
+  width: 100%;
+  height: 10%;
+  background: #F9FBFF;
+  border-radius: 10px 10px 0 0;
+}
+
+.name {
+  position: absolute;
+  top: 22px;
+  text-transform: uppercase;
+  color: #777777;
+  font-size: .8em;
+  letter-spacing: 2px;
+  font-weight: 500;
+  left: 60px;
+}
+
+.icons {
+  position: absolute;
+  color: blue;
+  padding: 10px;
+  top: 5px;
+  right: 21px;
+  cursor: pointer;
+}
+
+.icons .fa{
+  padding: 10px;
+  opacity: 0.8;
+}
+
+.menu {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  width: 10px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.dots {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #79C7C5;
+  box-shadow: 0px 7px 0px #79C7C5, 0px 14px 0px #79C7C5;
+}
+
+.middle {
+  position: absolute;
+  background: #F9FBFF;
+  width: 100%;
+  opacity: 0.85;
+  top: 60px;
+  height: 80%;
+  overflow-y: auto;
+}
+
+.bubble {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #F9FBFF;
+  font-size: 0.8em;
+  padding: 10px 10px 10px 12px;
+  border-radius: 20px;
+}
+
+.incoming {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+}
+
+.incoming .bubble {
+  background: #79C7C5;
+  float: left;
+}
+
+.bottom-bar {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  bottom: 0;
+  background: #F9FBFF;
+  border-radius: 0 0 10px 10px;
+}
+
+.lower {
+  margin-top: 45px;
+}
+
+input {
+  padding: 7px;
+  width: 74%;
+  left: 5%;
+  position: absolute;
+  border: 0;
+  top: 13px;
+  background: #F9FBFF;
+  color: #79C7C5;
+
+}
+
+input::placeholder {
+  color: grey;
+}
+
+input:focus {
+  color: #777777;
+  outline: 0;
+}
+
+button {
+  position: absolute;
+  border: 0;
+  font-size: 1em;
+  color: blue;
+  top:  19px;
+  opacity: 0.8;
+  right: 17px;
+  cursor: pointer;
+  outline: 0;
+}
+
+button:hover {
+  transform: scale(1.1);
+  transition: all .3s ease-in-out;
+  color: #79C7C5;
+}

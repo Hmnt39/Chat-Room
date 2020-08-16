@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+<html lang = "en">
+   <head> 
+      <meta charset = "utf-8" /> 
+      <title>Chat Room</title>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='room.css') }}">
+   </head>
+	
+   <body> 
+      <div class="container">
+         <h1> Join Room </h1>
+         <div class="formgroup">
+           <input type="text" id="room_name" placeholder="Enter Room ID" required="" />
+         </div>
+         <div class="formgroup">
+           <input type="text" id="name" placeholder="Enter your name" required="" />
+         </div>
+         <button onclick="joinRoom()">Join Room</button>
+       </div>
+
+      <!-- <button id="room" onclick="createRoom()">Create Room</button>
+      <button id="join" onclick="joinRoom()">Join Room</button>
+
+      <input id="message" type="text" name="message" placeholder="Type your message">
+      <button onclick="send()"> Send </button>
+      <ul id="msg-list"></ul> -->
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+      <script src = "{{ url_for('static', filename='socket.js') }}"></script>
+   </body> 
+</html>Join

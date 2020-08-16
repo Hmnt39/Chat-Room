@@ -1,0 +1,53 @@
+html {
+  display: grid;
+}
+
+body {
+  display: grid;
+  background: linear-gradient(to bottom left, #AAAAAA 20%, #7900FF 100%);
+}
+
+.container {
+  position: relative;
+  margin: 2% auto;
+  width: 620px;
+  height: 600px;
+}
+
+.formgroup{
+  width: 100%;
+  height: 7%;
+  background: #F9FBFF;
+  margin: 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+input {
+  padding: 7px;
+  width: 74%;
+  left: 5%;
+  border: 0;
+  top: 13px;
+  font-size: 1em;
+  background: #F9FBFF;
+  color: #79C7C5;
+
+}
+
+input::placeholder {
+  color: grey;
+}
+
+input:focus {
+  color: #777777;
+  outline: 0;
+}
+
+button {
+  width: 100%;
+  height: 7%;
+  background: #F9FBFF;
+  margin: 10px;
+  font-size: 1.2em;
+  border-radius: 10px 10px 10px 10px;
+}
