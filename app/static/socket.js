@@ -34,6 +34,7 @@ function send(){
   var input = document.getElementById('message');
   messagetext = input.value;
   input.value = ''
+  console.log(messagetext)
   socket.send({message: messagetext, roomId: '123', userId: userId});
 }
 

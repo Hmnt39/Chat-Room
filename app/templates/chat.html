@@ -10,7 +10,7 @@
     <div class="container">
       <div class="chatbox">
         <div class="top-bar">
-          <div class="name">Chat Room 1</div>
+          <div class="name">{{result.room.room_name}} <br> {{result.room.id}}</div>
           <div class="icons">
             <i class="fa fa-phone"></i>
             <i class="fa fa-camera"></i>
@@ -25,10 +25,29 @@
           </div>
         </div>
         <div class="bottom-bar">
-            <input type="text" placeholder="Type a message..." />
-            <button type="submit"><i class="fa fa-paper-plane"></i></button>
+            <input id="message" type="text" placeholder="Type a message..." />
+            <button type="submit" onclick="send()"><i class="fa fa-paper-plane"></i></button>
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script src = "{{ url_for('static', filename='socket.js') }}"></script>
   </body>
 </html>
+
+
+<!-- <button id="room" onclick="createRoom()">Create Room</button>
+      <button id="join" onclick="joinRoom()">Join Room</button>
+
+      <input id="message" type="text" name="message" placeholder="Type your message">
+      <button onclick="send()"> Send </button>
+      <ul id="msg-list"></ul> -->
+
+        <!-- <button id="room" onclick="createRoom()">Create Room</button>
+      <button id="join" onclick="joinRoom()">Join Room</button>
+
+      <input id="message" type="text" name="message" placeholder="Type your message">
+      <button onclick="send()"> Send </button>
+      <ul id="msg-list"></ul> -->
+      <!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+      <script src = "{{ url_for('static', filename='socket.js') }}"></script> -->

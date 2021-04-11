@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, request
 from flask_socketio import join_room, emit, send
 from app import app, socketio
 import json
@@ -10,7 +10,7 @@ ROOMS = {}
 @socketio.on('create')
 def on_create(data):
     print("Creating Room");
-    roomId = str(uuid.uuid4())
+    roomId = "123"
     data['room']['id'] = roomId
     ROOMS[roomId] = {
         'users': [data['user']],
@@ -37,14 +37,37 @@ def on_join(data):
     else:
         emit('error', {'error': 'Unable to join room. Room does not exist.'})
 
-@app.route('/')
+
+@app.route('/', methods = ['POST', 'GET'])
 def index():
+    if request.method == 'POST':
+        result = request.form
+        id = "123"
+        room = {
+            'id' : id,
+            'room_name': result.get('room_name'),
+            'description': result.get('description')
+        }
+        user = {
+            'name': result.get('name')
+        }
+        ROOMS[id] = {
+            'users': [user],
+            'room': room
+        }
+        join_room(id)
+        return render_template("chat.html", result=ROOMS[id])
     return render_template('index.html')
 
-@app.route('/join')
+@app.route('/join', methods = ['POST', 'GET'])
 def join():
+    if request.method == 'POST':
+        result = request.form
+        id =  result.get('room_id').lower()
+        if id in ROOMS:
+            ROOMS[id]['users'].append(
+                {
+                    'name': result.get('name')
+                })
+            return render_template("chat.html", result=ROOMS[id])
     return render_template('join.html')
-
-@app.route('/chat')
-def chat():
-    return render_template('chat.html')
